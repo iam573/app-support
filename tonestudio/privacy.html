@@ -10,12 +10,27 @@
   <nav aria-label="主导航"><strong>Tone色影</strong><a href="./">使用支持</a></nav>
   <main>
     <h1>隐私政策</h1>
-    <p>开发者为吴青山（Qingshan Wu）。本政策自 2026 年 11 月 20 日起生效。</p>
+    <p>开发者为吴青山（Qingshan Wu）。本政策自 2026 年 11 月 20 日起生效，人脸数据说明于 2026 年 11 月 23 日补充。</p>
     <p>Tone色影在你的 iPhone 上进行取景、滤镜处理和构图。使用 App 无需账号。开发者不收集或跟踪用户数据，App 未集成广告或第三方分析 SDK。</p>
     <h2>相机、相册与位置</h2>
     <p>相机用于拍照和录制无声视频。照片权限用于浏览、编辑、保存和分享你选择的作品。开启照片定位并授权后，App 可把拍摄位置写入新照片；分享原片时，位置可能随文件传给接收方。你可以在系统设置中调整权限。</p>
-    <h2>人脸柔化</h2>
-    <p>开启自然美颜后，App 在设备上检测脸部区域，用于局部柔化。人脸位置仅在处理期间保留在内存中，开发者不会收到图像或检测结果。</p>
+    <h2>人脸数据</h2>
+    <p>人脸处理全部在你的设备上完成，不涉及人脸识别、身份验证或生物特征识别。</p>
+    <p>处理内容：开启「自然美颜」后，App 使用 Apple 系统内置的 Vision 框架（VNDetectFaceRectanglesRequest）在相机实时画面或你正在拍摄、编辑的照片上做本地人脸区域检测。检测结果只有人脸区域的位置与大小（若干归一化矩形坐标），不提取五官关键点，不做特征向量比对，也不生成任何人脸模板或可识别身份的生物特征数据。</p>
+    <p>用途：矩形坐标仅用于把柔化效果限制在人脸区域内（局部高斯柔化）并随画面一起渲染。人脸数据不用于广告、统计分析、用户画像或任何其他目的。</p>
+    <p>存储与保留：人脸区域坐标只在处理期间短暂保存在运行内存中，至下一次检测刷新（约 0.42 秒）即被覆盖；不写入磁盘、不写入相册、不进入 iCloud、不写入任何日志。停止拍摄、切换美颜或镜像设置、退出 App 时立即清除。</p>
+    <p>共享与第三方：开发者不收集、不上传、不共享、不出售、不向任何第三方披露人脸数据，也没有服务器接收图像或人脸数据。App 未集成广告、分析或第三方 SDK，不通过网络传输图像或人脸数据。</p>
+    <p>删除：无需用户额外操作。停止拍摄、关闭自然美颜或退出 App 即清除内存中的人脸位置数据；卸载 App 会清除全部本地设置。</p>
+    <p>权限：App 不请求 Face ID（LocalAuthentication）权限，不使用原深感摄像头的人脸数据，也不用人脸数据进行身份认证。</p>
+
+    <h2>Face Data (English)</h2>
+    <p lang="en">Face processing in Tone色影 happens entirely on the user's device. The app does not perform face recognition, identity verification, or biometric identification.</p>
+    <p lang="en">What is processed: when the optional "Natural Beauty" feature is enabled, the app uses Apple's on-device Vision framework (VNDetectFaceRectanglesRequest) to locate face regions in the live camera feed or in the photo being captured or edited. The only result is a set of normalized rectangles describing the position and size of face regions. The app does not extract facial landmarks, does not compute feature vectors, and does not create faceprints, biometric templates, or any data that could identify a person.</p>
+    <p lang="en">Purpose: the rectangles are used solely to restrict a local Gaussian softening to the face area while rendering the image. Face data is never used for advertising, analytics, user profiling, or any other purpose.</p>
+    <p lang="en">Storage and retention: face-region coordinates exist only in transient memory during processing and are overwritten at the next detection refresh (approximately every 0.42 seconds). They are never written to disk, saved to the photo library, synced to iCloud, or written to any log. They are cleared when the user stops capture, toggles the beauty or mirror setting, or leaves the app.</p>
+    <p lang="en">Sharing and third parties: the developer does not collect, upload, share, sell, or disclose face data to any third party, and no server receives images or face data. The app contains no advertising, analytics, or third-party SDKs, and transmits neither images nor face data over the network.</p>
+    <p lang="en">Deletion: no user action is required. Stopping capture, disabling Natural Beauty, or quitting the app clears the in-memory face positions, and deleting the app removes all locally stored settings.</p>
+    <p lang="en">Permissions: the app does not request Face ID (LocalAuthentication) permission, does not use TrueDepth camera face data, and does not use face data to authenticate users.</p>
     <h2>保存、分享与删除</h2>
     <p>收藏和拍摄偏好保存在本机，删除 App 会清除这些设置。已保存的照片和视频归系统图库管理，你可以在「照片」中删除。若开启 iCloud 照片，系统会按你的 Apple 设置同步或下载素材。主动分享时，系统会将文件交给你选定的接收方。</p>
     <h2>支持网站</h2>
