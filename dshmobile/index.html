@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-Hans"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DSH Remote · 使用支持</title><link rel="stylesheet" href="../style.css"></head>
+<body><nav aria-label="主导航"><strong>DSH Remote</strong><a href="privacy.html">隐私政策</a></nav><main>
+<h1>使用支持</h1>
+<p>DSH Remote 是独立第三方客户端，用来在 iPhone 上继续电脑端的对话、查看任务进度并处理审批。它与 DeepSeek 无隶属或背书关系，也不连接任何中转服务器：手机直接连你自己的电脑。</p>
+
+<h2>第一步：在电脑上装插件</h2>
+<p>在电脑的 DSH Harness 工作台里安装配套插件 <code>dsh-remote</code>（Node 24.9 以上，无需额外依赖）。装好后重启工作台，插件会监听本机端口并打印一次性配对二维码。二维码里的口令只用于首次配对，长期令牌不会出现在二维码里。</p>
+
+<h2>第二步：在手机上配对</h2>
+<p>打开 DSH Remote，点「扫一扫」对着电脑屏幕上的二维码。App 会先确认对面确实是你的电脑（指纹一致），再完成配对，并把设备令牌存进 iOS 钥匙串。没有摄像头权限时，也可以手动输入电脑地址（例如 <code>192.168.1.9:3081</code>）再输入口令。</p>
+
+<h2>三种连接方式</h2>
+<p><strong>局域网直连</strong>：手机和电脑连同一个 Wi-Fi，最简单，速度最快。</p>
+<p><strong>手动组网</strong>：不在同一个网络时，用蒲公英、Tailscale 一类组网工具把两台设备放进同一虚拟网络，再把组网地址加进地址表。</p>
+<p><strong>多条地址自动选路</strong>：地址表里可以同时保留局域网和组网地址，App 会按可达性与延迟自动挑最快的一条，连不上时依次尝试其余地址。</p>
+
+<h2>连不上时怎么办</h2>
+<p>连接页右下角的「连不上？」会打开诊断：它分别告诉你地址能不能通、口令对不对、插件版本和 App 版本是否匹配、令牌是否已被电脑端撤销，并给出下一步动作。常见原因与处理：</p>
+<p>1. <strong>电脑休眠</strong>：唤醒电脑，确认插件仍在运行。<br>
+2. <strong>不在同一网络</strong>：确认两台设备连的是同一个 Wi-Fi，或先在组网工具里确认虚拟 IP 可达。<br>
+3. <strong>版本不匹配</strong>：诊断页会显示双方版本号，把插件或 App 升级到同一协议版本。<br>
+4. <strong>令牌被撤销</strong>：在电脑端插件的设备管理里重新生成二维码，手机上删除旧设备后重新配对。</p>
+
+<h2>演示模式</h2>
+<p>没有电脑也能看完整流程：连接页点「先体验演示」，会进入内置示例，包含会话列表、对话流和审批卡，顶部常驻「演示模式」横幅。演示不连接任何电脑，也不产生真实请求。</h2>
+
+<h2>安全与数据</h2>
+<p>设备令牌与设备密钥只存在本机钥匙串，可开启 Face ID 解锁。App 不采集会话正文、不上报使用行为、不接入第三方统计或广告 SDK。诊断包在导出前会脱敏，你可以先检查内容再决定是否发给开发者。</p>
+
+<h2>意见反馈</h2>
+<p>请发邮件到 <a href="mailto:nlwqs573@163.com?subject=%5BDSH%20Remote%5D%20%E6%84%8F%E5%89%8D%E5%8F%8D%E5%BA%85">nlwqs573@163.com</a>，写明 iPhone 型号、iOS 版本、插件版本和复现步骤。请勿在邮件里附带你的电脑地址、配对口令或会话内容。也可以在 App 内「设置 → 意见反馈」直接发起邮件，正文会自动带上版本与构建号。</p>
+
+<h2>使用条款</h2>
+<p>本 App 适用 Apple 标准最终用户许可协议（EULA）：<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></p>
+</main></body></html>
